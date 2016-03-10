@@ -1,0 +1,1 @@
+This file is set up for the ICS2 class to check the spelling of words in a two paragraph piece of text. You should be able to fix all the er2. 

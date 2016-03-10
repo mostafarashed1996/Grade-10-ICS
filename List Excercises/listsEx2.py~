@@ -1,0 +1,33 @@
+import os
+keepgoing= raw_input("Welcome to Mostafa's amazing dictionary! To execute the program press 'Y' ")
+dictionary = []
+dictword = " "
+while keepgoing.upper() == "Y":
+    dictfile = open("dictionary.txt","r")
+    word = raw_input("Please enter a word that is 3-6 letters in length, to check in the dictionary ")
+    word = word.lower()
+    if len(word)>= 3 and len(word) <=6:
+        while dictword != "":
+            dictword = dictfile.readlines()
+            dictionary.append(dictfile) 
+        if word in dictionary:
+            print "This word is in the dictionary"
+        else:
+            add = raw_input("This word is not in the dictionary. Do you want to add this word to the dictionary? (Y/N) ")
+            if add.upper == "Y":
+                dictfile.close()
+                dictfile2 = open("dictionary.txt", "a")
+                write = dictfile2.write(word + "\n")
+                dictionary.append(word)
+                dictfile2.close()
+                print "The word %s has been added to the list" %word
+            else:
+                break
+        keepgoing = raw_input("Do you want to check another word? (Y/N) ")
+        break
+    elif len(word) < 3:
+        print "The word is less than 3 letters. Please try again"
+        break
+    elif len(word) > 6:
+        print "The word is more than 6 letters. Please try again"
+raw_input("Thank you for using this dictionary! Have a good day!")

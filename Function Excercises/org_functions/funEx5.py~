@@ -1,0 +1,21 @@
+# pay program
+# this program will ask the user how much they worked and how much they get paid hourly, it will then show them the amount of tax union fee will cost, as well as how much money they have left over
+
+# ask them for the amount of hours the worked
+hours = input("how many hours did you work this week?")
+# ask the user their hourly pay rate
+payRate = input("what is your hourly pay rate?")
+# make net pay function 
+def netPay(payRate,hours):
+# make a total 
+    total = payRate*hours
+# subtract the tax and union fee to get left over 
+    left_over = total - (total*0.21) - (total*0.02)
+    print "your left over money is eual to ",left_over
+# multiply the total by 0.02 ot get union fee
+    union_fee = total*0.02
+    print "your union fee is", union_fee
+# multiply the total by 0.20 to get tax
+    tax = total*0.20
+    print "your tax fee is", tax
+print netPay(payRate,hours)

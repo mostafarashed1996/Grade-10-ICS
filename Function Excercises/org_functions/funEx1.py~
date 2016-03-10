@@ -1,0 +1,16 @@
+# hypotenuse of right angled triangle
+# last update Dec 20
+# this program will ask the user for the 2 side lengths of a right angled triangle and find the hypotenuse
+
+# make hypotenuse function using pythagorean theorem
+def hypotenuse(side1, side2):
+    side3=(side1**2+side2**2)**0.5
+    print side3
+# ask them for the side lengths
+side1 = input("what is your 1st side's lenght?")
+side2 = input("what is your seccond side's length?")
+# output answers
+print "your hypotenuse is equal to"
+hypotenuse(side1, side2)
+
+    

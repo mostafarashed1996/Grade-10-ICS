@@ -1,0 +1,42 @@
+#Opening and Editing Multiple Files
+#Marko Alhamadani
+#Last revised: April 10, 2012
+#This program will open 2 files simultaneously in write and read formats respectfully. It will then generate random marks for the given names, and then input them into a new file. Finally, it will read the new file, printing out the average mark.
+
+#Import random function to allow for random generation of numbers.
+from random import randint
+#Open 2 files 
+classnames = open("ICS2_Class.txt","r")
+classmarks = open("Classmarks.txt","w")
+#Set up accumulators for total marks and number of marks.
+marknum = 0
+marktotal = 0
+#Prints out the required headers for the list.
+print "\tInitials      Grade"
+print "\t--------      -----"
+classmarks2=open("Classmarks.txt","a")
+#Set up loop to read and write the names of the students also generate random marks 
+while True:
+    #Read each line of the text file.
+    name = classnames.readline()
+    #if no name was read then break the loop
+    if name == "":
+        break
+    #Set variable for initials, and assign to string variable
+    Initials = name[0].upper()
+    while name.count(" ")>0:
+        Initials = Initials + name[name.find(" ")+1].upper()
+        name = name[:name.find(" ")]+name[name.find(" ")+1:]
+    #generate random marks for each student.
+    Mark = randint(50,100)
+    #Print the initials and the marks of the students
+    print "\t   " + Initials + "\t\t " + str(Mark)
+    var=classmarks2.write("\t   " + Initials + "\t\t " + str(Mark)+"\n")
+    #Add one to the 'marknum' variable and add mark to the 'marktotal' variable
+    marknum+=1
+    marktotal+=Mark
+#Prints average
+average=round(marktotal*1.0/marknum,1)
+print "\t\t      -----"
+print "\t Average%11.1f" % (average)+"%"
+raw_input()

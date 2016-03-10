@@ -1,0 +1,2 @@
+This file is set up for the ICS2 class to chek the spelling of words in a two paragraph piece of text. You should be albe to fix all the errors.
+To get bonnus marks you have to get the program to recognize this second paragraph and save it back as 2 paragraphs.

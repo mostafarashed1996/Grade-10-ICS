@@ -1,0 +1,20 @@
+# changing funcitons
+# Griffin Nikkel
+# last update dec 20
+# this program converts list finding to string  finding
+
+# make a number list 
+num_list = [1,2,3,4,5,6,7,8]
+# define the listFind function 
+def listFind(number, num_list):
+# make it a string
+    num_list = str(num_list)
+# use the find function to get the index
+    finding_number = num_list.find(number)
+    print finding_number
+# ask them for the number they are looking for 
+number = str(input("what number are you checking for?"))
+# print the index 
+print "The index of that digit is: "
+listFind(number,num_list)
+raw_input()
